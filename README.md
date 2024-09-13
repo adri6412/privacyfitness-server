@@ -106,6 +106,3 @@ La GPL-2.0 è una licenza copyleft che garantisce agli utenti la libertà di uti
 Per i dettagli completi, si prega di consultare il file LICENSE incluso in questo repository o visitare:
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-## Contatti
-
-Per domande o problemi, aprire un issue su questo repository
