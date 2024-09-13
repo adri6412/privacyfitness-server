@@ -1,0 +1,14 @@
+{
+  "name": "wearos-dashboard",
+  "version": "1.0.0",
+  "main": "dashboard.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "moment": "^2.29.1",
+    "ejs": "^3.1.6"
+  },
+  "scripts": {
+    "start": "node dashboard.js"
+  }
+}

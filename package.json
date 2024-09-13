@@ -1,0 +1,32 @@
+{
+  "name": "wearos-fitness-tracker-server",
+  "version": "1.0.0",
+  "description": "Server per l'app di fitness tracking WearOS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wearos",
+    "fitness",
+    "tracking",
+    "server"
+  ],
+  "author": "Il tuo nome",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "mongoose": "^5.12.3",
+    "crypto": "^1.0.1",
+    "express-validator": "^6.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

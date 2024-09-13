@@ -1,0 +1,37 @@
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: "always" 
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/wearos_data
+    volumes:
+      - ./shared:/usr/src/app/shared
+    restart: "always" 
+  dashboard:
+    build:
+      context: ./views
+      dockerfile: Dockerfile
+    ports:
+      - "3005:3005"
+    depends_on:
+      - mongodb
+      - server
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/wearos_data
+    volumes:
+      - ./shared:/usr/src/app/shared
+    restart: "always"
+volumes:
+  mongodb_data:
