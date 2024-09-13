@@ -1,14 +1,14 @@
 # Privacy Fitness Server
 
-Questo repository contiene il codice lato server per il progetto Privacy Fitness. Il sistema è composto da due componenti principali: un API server che riceve e registra i dati dall'app Android Wear, e un server dashboard che fornisce un'interfaccia utente per visualizzare i dati personali.
+This repository contains the server-side code for the Privacy Fitness project. The system consists of two main components: an API server that receives and records data from the Android Wear app, and a dashboard server that provides a user interface for viewing personal data.
 
-## Componenti del Sistema
+## System Components
 
-1. **API Server**: Un server Node.js che riceve i dati dall'app Android Wear e li registra nel database.
-2. **Dashboard Server**: Un server separato che ospita l'interfaccia utente per la visualizzazione dei dati personali.
-3. **Database**: (Presumibilmente MongoDB) per la memorizzazione dei dati ricevuti.
+1. **API Server**: A Node.js server that receives data from the Android Wear app and records it in the database.
+2. **Dashboard Server**: A separate server that hosts the user interface for displaying personal data.
+3. **Database**: (Presumably MongoDB) for storing received data.
 
-## Struttura del Progetto
+## Project Structure
 
 ```
 privacy-fitness-server/
@@ -30,79 +30,78 @@ privacy-fitness-server/
     └── models.js
 ```
 
-## Requisiti di Sistema
+## System Requirements
 
-- Docker
-- Docker Compose
-- Git
+* Docker
+* Docker Compose
+* Git
 
-## Installazione
+## Installation
 
-Per installare e avviare il server Privacy Fitness, seguire questi passaggi:
+To install and start the Privacy Fitness server, follow these steps:
 
-1. Clonare il repository:
-   ```
-   git clone https://github.com/adri6412/privacy-fitness-server.git
-   cd privacy-fitness-server
-   ```
+1. Clone the repository:
 
-2. Avviare i servizi utilizzando Docker Compose:
-   ```
-   docker-compose up --build -d
-   ```
+```
+git clone https://github.com/adri6412/privacy-fitness-server.git
+cd privacy-fitness-server
+```
 
-Questo comando costruirà e avvierà tutti i servizi necessari (API server, Dashboard server e Database).
+2. Start the services using Docker Compose:
 
-## Configurazione
+```
+docker-compose up --build -d
+```
 
-La configurazione dei servizi può essere modificata nel file `docker-compose.yml`. Qui è possibile regolare le porte, le variabili d'ambiente e altre impostazioni per ciascun servizio.
+This command will build and start all necessary services (API server, Dashboard server, and Database).
 
-## Utilizzo
+## Configuration
 
-Una volta avviati i servizi:
+The configuration of services can be modified in the `docker-compose.yml` file. Here you can adjust ports, environment variables, and other settings for each service.
 
-- L'API server sarà accessibile su `http://localhost:<porta_api>`
-- Il Dashboard utente sarà accessibile su `http://localhost:<porta_dashboard>`
+## Usage
 
-Sostituire `<porta_api>` e `<porta_dashboard>` con le porte effettive configurate nel `docker-compose.yml`.
+Once the services are started:
 
-## Sviluppo
+* The API server will be accessible at `http://localhost:<api_port>`
+* The user Dashboard will be accessible at `http://localhost:<dashboard_port>`
 
-Per lavorare sul codice:
+Replace `<api_port>` and `<dashboard_port>` with the actual ports configured in `docker-compose.yml`.
 
-1. Modificare i file necessari nell'api-server/ o dashboard-server/
-2. Ricostruire e riavviare i servizi: `docker-compose up --build`
+## Development
 
-### File principali:
+To work on the code:
 
-- `api-server/server.js`: Contiene la logica principale dell'API server per ricevere e registrare i dati.
-- `dashboard-server/server.js`: Gestisce la logica del server per la dashboard utente.
-- `dashboard-server/views/`: Contiene i file EJS e JS per l'interfaccia utente della dashboard.
-- `shared/models.js`: Definisce i modelli dati condivisi utilizzati nel progetto.
+1. Modify the necessary files in api-server/ or dashboard-server/
+2. Rebuild and restart the services: `docker-compose up --build`
 
-## API Server
+Main files:
 
-L'API server è responsabile di:
-- Ricevere i dati inviati dall'app Android Wear
-- Validare e processare i dati ricevuti
-- Registrare i dati nel database
+* `api-server/server.js`: Contains the main logic of the API server for receiving and recording data.
+* `dashboard-server/server.js`: Manages the server logic for the user dashboard.
+* `dashboard-server/views/`: Contains EJS and JS files for the dashboard user interface.
+* `shared/models.js`: Defines shared data models used in the project.
 
-## Dashboard Server
+### API Server
 
-Il Dashboard server è responsabile di:
-- Fornire un'interfaccia utente web per la visualizzazione dei dati personali
-- Recuperare i dati dal database e presentarli in modo comprensibile
-- Gestire l'autenticazione e l'autorizzazione degli utenti (se implementate)
+The API server is responsible for:
 
-## Contribuire
+* Receiving data sent from the Android Wear app
+* Validating and processing received data
+* Recording data in the database
 
-Siamo aperti a contributi!
+### Dashboard Server
 
-## Licenza
+The Dashboard server is responsible for:
 
-Licenza
-Questo progetto è rilasciato sotto la licenza GNU General Public License v2.0 (GPL-2.0).
-La GPL-2.0 è una licenza copyleft che garantisce agli utenti la libertà di utilizzare, studiare, condividere (copiare) e modificare il software. Se si distribuisce versioni modificate del software, è necessario rendere disponibile il codice sorgente sotto la stessa licenza GPL-2.0.
-Per i dettagli completi, si prega di consultare il file LICENSE incluso in questo repository o visitare:
-https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+* Providing a web user interface for viewing personal data
+* Retrieving data from the database and presenting it in an understandable way
+* Managing user authentication and authorization (if implemented)
 
+## Contributing
+
+We are open to contributions!
+
+## License
+
+This project is released under the GNU General Public License v2.0 (GPL-2.0). The GPL-2.0 is a copyleft license that grants users the freedom to use, study, share (copy), and modify the software. If you distribute modified versions of the software, you must make the source code available under the same GPL-2.0 license. For full details, please refer to the LICENSE file included in this repository or visit: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
