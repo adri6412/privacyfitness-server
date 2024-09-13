@@ -42,7 +42,7 @@ Per installare e avviare il server Privacy Fitness, seguire questi passaggi:
 
 1. Clonare il repository:
    ```
-   git clone https://github.com/tuousername/privacy-fitness-server.git
+   git clone https://github.com/adri6412/privacy-fitness-server.git
    cd privacy-fitness-server
    ```
 
